@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enseñanza y Aprendizaje en Aulas de Aprendizaje Activo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .target-audience {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .target-audience h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .audience-item {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            color: #764ba2;
+            font-weight: 500;
+            border-left: 3px solid #667eea;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-number {
+            background: rgba(255, 255, 255, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .card.active .card-content {
+            max-height: 500px;
+            padding: 20px;
+        }
+
+        .card-content ul {
+            list-style: none;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .card-content li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card-content li:before {
+            content: "▸";
+            color: #667eea;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Enseñanza y Aprendizaje en Aulas de Aprendizaje Activo</h1>
+            <p class="subtitle">Manual interactivo para la implementación de espacios innovadores en educación superior</p>
+            
+            <div class="target-audience">
+                <h3>👥 Público Objetivo</h3>
+                <div class="audience-list">
+                    <div class="audience-item">Rectores y Vicerrectores</div>
+                    <div class="audience-item">Decanos</div>
+                    <div class="audience-item">Docentes</div>
+                    <div class="audience-item">Unidades de Infraestructura</div>
+                    <div class="audience-item">Centros de Enseñanza y Aprendizaje</div>
+                    <div class="audience-item">Diseñadores Instruccionales</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="sections">
+            <!-- Sección 1 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Introducción y Justificación</span>
+                    <span class="card-number">1</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Propósito del manual:</strong> Guía completa para diseñar e implementar aulas innovadoras</li>
+                        <li><strong>Público objetivo:</strong> Rectores, vicerrectores, decanos, docentes, infraestructura, CTL, diseñadores instruccionales</li>
+                        <li><strong>Por qué son estratégicas:</strong> Responden a demandas de educación contemporánea y preparan estudiantes para el siglo XXI</li>
+                        <li>Mejoran la calidad educativa y la experiencia de aprendizaje</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 2 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Fundamentos Conceptuales</span>
+                    <span class="card-number">2</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>¿Qué es el aprendizaje activo?</strong> Enfoque donde estudiantes participan activamente en su proceso de aprendizaje</li>
+                        <li><strong>Relación pedagógica:</strong> Conexión entre pedagogía, espacio físico y tecnología</li>
+                        <li><strong>Evidencia investigativa:</strong> Resultados positivos en investigación educativa contemporánea</li>
+                        <li><strong>Alineación:</strong> Con enfoques educativos modernos y estándares internacionales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 3 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Tipologías y Modelos</span>
+                    <span class="card-number">3</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Perspectiva histórica:</strong> Evolución de las aulas de aprendizaje activo</li>
+                        <li><strong>Tipologías:</strong> Diferentes modelos de aulas activas en universidades</li>
+                        <li><strong>Componentes esenciales:</strong> Elementos que definen un aula de aprendizaje activo</li>
+                        <li><strong>Lo que NO es:</strong> Clarificación de conceptos errados sobre aulas activas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 4 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Diseño de Aulas</span>
+                    <span class="card-number">4</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Principios de diseño:</strong> Centrados en el aprendizaje del estudiante</li>
+                        <li><strong>Flexibilidad:</strong> Espacios adaptables a diferentes metodologías</li>
+                        <li><strong>Inclusión y accesibilidad:</strong> Diseño universal para todos los estudiantes</li>
+                        <li><strong>Sostenibilidad:</strong> Consideraciones ambientales y contextuales de Asia Central</li>
+                        <li><strong>Bienestar:</strong> Espacios que promueven salud mental y física</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 5 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Diseño Instruccional</span>
+                    <span class="card-number">5</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Alineación:</strong> Resultados de aprendizaje, actividades y evaluación alineados</li>
+                        <li><strong>Metodologías activas:</strong> Selección de las más adecuadas para el contexto</li>
+                        <li><strong>Evaluación:</strong> Estrategias de evaluación en aulas activas</li>
+                        <li><strong>Tecnología:</strong> Uso pedagógico estratégico de herramientas tecnológicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 6 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Formación Docente</span>
+                    <span class="card-number">6</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Rol del docente:</strong> Transformación del rol tradicional en espacios activos</li>
+                        <li><strong>Competencias necesarias:</strong> Habilidades pedagógicas requeridas</li>
+                        <li><strong>Modelos de formación:</strong> Programas de desarrollo docente</li>
+                        <li><strong>Acompañamiento:</strong> Antes, durante y después de la implementación</li>
+                        <li><strong>Gestión de cambio:</strong> Manejo de resistencias y transformación cultural</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 7 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Integración Institucional</span>
+                    <span class="card-number">7</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Estrategia universitaria:</strong> Alineación con objetivos institucionales</li>
+                        <li><strong>Políticas y normativas:</strong> Marcos regulatorios académicos</li>
+                        <li><strong>Articulación:</strong> Entre unidades académicas, TI e infraestructura</li>
+                        <li><strong>Caso institucional:</strong> Ejemplo de integración en universidades</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 8 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Implementación Paso a Paso</span>
+                    <span class="card-number">8</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Diagnóstico:</strong> Evaluación inicial de la institución</li>
+                        <li><strong>Definición:</strong> Objetivos y alcance del proyecto</li>
+                        <li><strong>Pilotos:</strong> Prototipos y pruebas iniciales</li>
+                        <li><strong>Escalamiento:</strong> Crecimiento progresivo de iniciativas</li>
+                        <li><strong>Participación:</strong> Co-diseño y comunicación con actores clave</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 9 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Evaluación e Impacto</span>
+                    <span class="card-number">9</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Indicadores de éxito:</strong> Métricas para evaluar resultados</li>
+                        <li><strong>Métodos de evaluación:</strong> Enfoques cualitativos y cuantitativos</li>
+                        <li><strong>Uso de datos:</strong> Toma de decisiones basada en evidencia</li>
+                        <li><strong>Mejora continua:</strong> Ciclos de retroalimentación y ajuste</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sección 10 -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Casos y Experiencias</span>
+                    <span class="card-number">10</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>Experiencias internacionales:</strong> Proyectos relevantes a nivel global</li>
+                        <li><strong>Lecciones aprendidas:</strong> Hallazgos de implementaciones exitosas</li>
+                        <li><strong>Errores comunes:</strong> Cómo identificar y evitar dificultades frecuentes</li>
+                        <li><strong>Retos:</strong> Problemas típicos y recomendaciones prácticas para resolverlos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>📚 Manual de Enseñanza y Aprendizaje en Aulas de Aprendizaje Activo</p>
+            <p>Diseñado para instituciones de educación superior en Asia Central y más allá</p>
+        </footer>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            const header = card.querySelector('.card-header');
+            header.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
